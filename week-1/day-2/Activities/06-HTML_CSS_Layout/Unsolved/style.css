@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: Georgia,"Times New Roman",Times,serif;
+    padding: 0;
+}
+
+header {
+    background-color: #333333;
+    padding: 15px;
+    color: white
+}
+
+#Pic {
+    float: left;
+}
+
+.Text {
+    float: right
+}
