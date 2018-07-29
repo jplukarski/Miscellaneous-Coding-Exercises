@@ -1,0 +1,13 @@
+/*Below styles makes the default background of the content section purple, and hovering over it will turn the background light blue and also enlargen the text*/
+
+.content {
+    background-color: blueviolet;
+    max-width: 960px;
+    margin: 50px;
+    padding: 25px;
+}
+
+.content:hover {
+    background-color: aliceblue;
+    font-size: 30px;
+}
