@@ -9,29 +9,61 @@
 
 <body>
 
-  <div id="game">
-
+  <div id="game">Your guess
+    <p id="userGuess" keyUp="game()">_</p>
+    Computer's guess
+    <p id="computerGuess" keyUp="game()">_</p>
+    Outcome:
+    <p id="outcome" keyUp="game()">_</p>
+    Win
+    <p id="win" keyUp="game()">0</p>
+    Lose
+    <p id="lose" keyUp="game()">0</p>
+    Tie
+    <p id="tie" keyUp="game()">0</p>
   </div>
+
+
 
   <script type="text/javascript">
 
+
+
     // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
-    var computerChoices = ["r", "p", "s"];
 
-    // This function is run whenever the user presses a key.
-    document.onkeyup = function(event) {
-
-      // Determines which key was pressed.
+    document.onkeyup = function game(event) {
       var userGuess = event.key;
+      var computerChoices = ["r", "p", "s"];
+      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+      var out_come = 
+
+      if (userGuess === "r" || userGuess === "p" || userGuess === "s") {
+        document.getElementById("userGuess").innerHTML = userGuess;
+        document.getElementById("computerGuess").innerHTML = computerGuess;
+
+
+        if (userGuess === "r" && computerGuess === "r") { document.getElementById("outcome").innerHTML = "tie" }
+        else if (userGuess === "r" && computerGuess === "p") { document.getElementById("outcome").innerHTML = "lose" }
+        else if (userGuess === "r" && computerGuess === "s") { document.getElementById("outcome").innerHTML = "win" }
+        else if (userGuess === "p" && computerGuess === "p") { document.getElementById("outcome").innerHTML = "tie" }
+        else if (userGuess === "p" && computerGuess === "s") { document.getElementById("outcome").innerHTML = "lose" }
+        else if (userGuess === "p" && computerGuess === "r") { document.getElementById("outcome").innerHTML = "win" }
+        else if (userGuess === "s" && computerGuess === "s") { document.getElementById("outcome").innerHTML = "tie" }
+        else if (userGuess === "s" && computerGuess === "r") { document.getElementById("outcome").innerHTML = "lose" }
+        else if (userGuess === "s" && computerGuess === "p") { document.getElementById("outcome").innerHTML = "win" }
+
+
+      }
+
 
       // Randomly chooses a choice from the options array. This is the Computer's guess.
-      var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+
 
       // Alerts the key the user pressed (userGuess).
-      alert("User guess: " + userGuess);
+      //alert("User guess: " + userGuess);
 
       // Alerts the Computer's guess.
-      alert("Computer guess: " + computerGuess);
+      //alert("Computer guess: " + computerGuess);
 
     };
   </script>

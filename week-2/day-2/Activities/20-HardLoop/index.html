@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zoo Animals</title>
+</head>
+
+<body>
+
+    <script>
+
+        var myFarm = ["chickens", "pigs", "cows", "horses", "ostriches"]
+
+        console.log("First statement");
+        for (var index = 0; index < myFarm.length; index++) {
+            console.log(myFarm[index])
+        }
+
+
+        for (var index = 0; index < myFarm.length; index++) {
+            var animal = myFarm[index];
+            if(animal.charAt(0) === 'c' || animal.charAt(0) === 'o') alert("Starts with a 'c' or 'o'")
+        }
+
+    </script>
+
+</body>
+
+</html>
