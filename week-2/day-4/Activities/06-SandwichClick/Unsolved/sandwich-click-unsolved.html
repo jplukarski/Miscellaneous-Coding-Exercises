@@ -16,6 +16,7 @@
   <h3 id="pbj">Peanut Butter Jelly</h3>
   <h3 id="grilledcheese">Grilled Cheese</h3>
   <h3 id="roastbeef">Roast Beef</h3>
+  <div id="image"></div>
 
   <script type="text/javascript">
 
@@ -23,12 +24,16 @@
     // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
     // It's useful to become familiar with now.
 
-    $(document).ready(function() {
+    $(document).ready(function () {
 
       // VARIABLES
       // ====================================================================
       // Here we create variables for tracking the number of sandwiches eaten
       // ...
+      var pbj = 0
+      var grilledcheese = 0
+      var roastbeef = 0
+      var foodImage = $("#image")
 
 
       // ...
@@ -38,13 +43,49 @@
       // Here we create various on "click" functions which capture the clicks
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
+      $("#pbj").on("click", function () {
+        alert("Oh yummy a delicious pbj!");
+        pbj++;
+        alert("Wow! That is " + pbj + " pbjs so far!");
+
+      });
+
+      $("#pbj").on("click", function () {
+        var pbjImg = $('<img src="https://www.momdot.com/wp-content/uploads/2012/07/fried-pbj-9498.jpg">');
+        foodImage.append(pbjImg);
+      })
+
+      $("#grilledcheese").on("click", function () {
+        alert("How cheesy!");
+        grilledcheese++;
+        alert("Wow! That is " + grilledcheese + " grilled cheeses so far!");
+      });
+
+      $("#grilledcheese").on("click", function () {
+        var grilledCheeseImg = $('<img src="https://assets.marthastewart.com/styles/wmax-1500/d37/pumpkin-grilled-cheese-1117-103119752/pumpkin-grilled-cheese-1117-103119752_0_horiz.jpg?itok=d7k7kF2B">');
+        foodImage.append(grilledCheeseImg);
+      })
+
+      //
 
 
-      // ...
+      $("#roastbeef").on("click", function () {
+        alert("That au jous though....");
+        roastbeef++;
+        alert("Wow! That is " + roastbeef + " roastbeefs so far!");
+
+      });
+
+      $("#roastbeef").on("click", function () {
+        var roastBeefImg = $('<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTR-8egqiubRsh9mJRVBnBMRfMv7DpVdvIBdn9JKBDtrMwshqp1">');
+        foodImage.append(roastBeefImg);
+      })
+
+      //
 
     });
 
-</script>
+  </script>
 
 </body>
 
