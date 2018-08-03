@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JavaScript Content!</title>
 </head>
+
 <body>
 
   <h1>Drink Selection!</h1>
@@ -24,24 +26,25 @@
       "Ice Coffee: $6",
       "Ice Espresso: $8",
       "Ice Latte: $6",
-      "Ice Tea: $4"
+      "Ice Tea: $4",
+
     ];
 
-    // 1. Create code that "grabs" the div with the matching id (#drink-options);
-    // ...
 
 
-    // ...
+    var targetDiv = document.getElementById("drink-options");
 
+    var newUl = document.createElement("ul");
+    targetDiv.appendChild(newUl);
 
-    // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
-    // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
-    // ...
-
-
-    // ...
+    for (var index = 0; index < drinkList.length; index++) {
+      var newLi = document.createElement("li")
+      newUl.appendChild(newLi)
+      newLi.textContent = drinkList[index]
+    }
 
   </script>
 
 </body>
+
 </html>
