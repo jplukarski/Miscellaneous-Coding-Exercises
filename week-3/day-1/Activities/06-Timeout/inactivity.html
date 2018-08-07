@@ -1,0 +1,55 @@
+<!--
+Create HTML
+JQUERY
+SCRIPT
+
+outside of the even listener, start a timer
+
+add an event listener (onKeyUp)
+    if user types any key, clear the timer
+    then set a new timer
+
+At the end of the timer alert "You have been logged off due to inactivity"
+Hint: Use clearTimeOut and setTime Out
+
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Inactivity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+
+
+</head>
+
+<body>
+
+    <script>
+
+        // we are assigning the variable "clear" to the output of createTimer().
+        var clear = createTimer();
+
+        $(document).keyup(function () {
+            clearTimeout(clear);
+            clear = createTimer();
+        });
+
+        function createTimer() {
+            return setTimeout(function () {
+                alert("You have been logged off due to inactivity");
+            }, 5000);
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
