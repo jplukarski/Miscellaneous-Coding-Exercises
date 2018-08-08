@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Append Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">
+        <h1></h1>
+    </div>
+
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script>
+
+        //       var h1 = $("<h1>");
+        //     h1.text("Joe")
+        //   $(".container").append(h1)
+
+        var emojis = ["👻", "😡", "😜", "🕶"];
+
+        //**
+        // what I did that added an emoji instead of replacing it
+        // setInterval(function () { $(".container").append(emojis[Math.floor((Math.random() * 5))]) }, 2000)
+        //**
+
+        //*************************
+        // The "receipt" of the interval ID so we can later reset it.
+        var intervalID = setInterval(update, 2000);
+        var currentEmoji = 0;
+        function update() {
+            if (currentEmoji > emojis.length - 1) {
+                currentEmoji = 0;
+            }
+        }
+        //Update the DOM
+        $("h1").text("Current Emoji " + emojis[currentEmoji]);
+        currentEmoji++;
+        //*************************
+
+    </script>
+</body>
+
+</html>

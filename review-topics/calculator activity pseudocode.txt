@@ -1,0 +1,25 @@
+Var 1:
+When a number button is clicked {
+	display it's value in the first number div;
+	if a second number is clicked, concatenate it's value with the first number;
+	repeat until an operator button is clicked;
+	create a variable for the first constant;
+
+Var 2:
+when an operator button is clicked{
+	move to the next line;
+	show value of operator;
+	store value in variable;
+	only one operator button can be clicked;
+
+Var 3:
+When a number button is clicked {
+	display it's value in the second number div;
+	if a second number is clicked, concatenate it's value with the first number;
+	repeat until an operator button is clicked;
+	create a variable for the second constant;
+	
+Var 4:
+When the "=" button is pressed {
+	create a function that takes Var 1, Var 2, Var 3 and does math with them
+	display result on the screen below the line

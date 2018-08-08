@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Append Child Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <div id="empty_div"></div>
+
+    <script type="text/javascript">
+
+        var list = [
+            "List1",
+            "List2",
+            "List4",
+            "List5",
+            "List6",
+            "List7",
+        ];
+
+        var targetDiv = document.getElementById("empty_div");
+        var newUL = document.createElement("ul");
+        targetDiv.appendChild(newUL);
+
+        for (var index = 0; index < list.length; index++) {
+            var newLi = document.createElement("li")
+            newUL.appendChild(newLi);
+            newLi.textContent = list[index]
+        }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
