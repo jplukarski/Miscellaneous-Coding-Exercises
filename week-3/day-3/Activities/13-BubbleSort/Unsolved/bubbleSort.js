@@ -67,3 +67,22 @@ var unsortedArr = [
   292, 332, 209, 244, 196, 179, 472, 279, 40, 486, 270, 185,
   181, 485, 495, 81, 169, 294, 79, 400, 92, 104, 249
 ];
+
+// create a function called sort array
+// if the first number is greater than the second number, then flip
+// 
+
+function bubbleSort(arr) {
+
+  var sorted = true;
+  //Loop through the array
+  for (var i = 0; i < arr.length; i++) {
+    //If the current element is greater than the element next to it, than swap
+    if (arr[i] > arr[i + 1]) {
+      sorted = false;
+      var temp = arr[i]
+      arr[i] = arr[i + 1];
+      arr[i + 1] = temp;
+    }
+  }
+}
