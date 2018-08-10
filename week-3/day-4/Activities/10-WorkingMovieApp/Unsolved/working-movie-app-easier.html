@@ -24,7 +24,8 @@
 
     <form id="movie-form">
       <label for="movie-input">Add a Movie Bro</label>
-      <input type="text" id="movie-input"><br>
+      <input type="text" id="movie-input">
+      <br>
 
       <!-- Button triggers new movie to be added -->
       <input id="add-movie" type="submit" value="Add a Movie Bro">
@@ -48,21 +49,25 @@
         $.ajax({
           url: queryURL,
           method: "GET"
-        }).then(function(response) {
+        }).then(function (response) {
+          console.log(response);
 
-          // Creates a div to hold the movie
-          // Retrieves the Rating Data
-          // Creates an element to have the rating displayed
-          // Displays the rating
-          // Retrieves the release year
-          // Creates an element to hold the release year
-          // Displays the release year
-          // Retrieves the plot
-          // Creates an element to hold the plot
-          // Appends the plot
-          // Creates an element to hold the image
-          // Appends the image
-          // Puts the entire Movie above the previous movies.
+          //poster
+          var poster = $("<img>");
+          poster.attr("src", response.Poster);
+          $("#movies-view").html(poster);
+
+          //rating
+          var rating = $("<div>");
+          $("#movies-view").append("<p>" + "Rating: " + response.Rated) + "</p>";
+
+          //release date
+          var releaseDate = $("<div>")
+          $("#movies-view").append("<p>" + "Release Date: " + response.Released + "</p>");
+
+          //plot
+          var plot = $("<div>")
+          $("movies-view").append("<p>" + "Plot: " + response.Plot + "</p>");
         });
 
       }
@@ -91,7 +96,7 @@
       }
 
       // This function handles events where the add movie button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         event.preventDefault();
         // This line of code will grab the input from the textbox
         var movie = $("#movie-input").val().trim();
