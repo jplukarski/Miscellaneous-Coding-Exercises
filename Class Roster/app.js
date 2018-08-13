@@ -1,33 +1,50 @@
 $(document).ready(function () {
     var studentEnrollmentCount = 0;
-    function updateStudentEnrollment() {
-        studentEnrollmentCount++;
-        $("h2").text("Student Enrollment: " + studentEnrollmentCount)
-    }
 
-    //get access to the button and add a click listener
+    function updateStudentEnrollmentCount() {
+        studentEnrollmentCount++;
+        $("h2").text("Student Enrollment: " + studentEnrollmentCount);
+    }
+    // get access to the button and add a click listener
     $("button").on("click", function (event) {
         event.preventDefault();
-        console.log("Click");
 
-        //capture the input
+        // capture the input
         var studentName = $("input").val();
-        console.log(studentName);
+
         // append the input to the screen
-        //create tr
+        // create tr
         var tr = $("<tr>");
-        //create td
+        // create td
         var td = $("<td>");
-        //set the contents of the td
-        td.text(studentName);
-        //append the tr to the screen
+        // add a random image from this url:
+        // https://api.adorable.io/avatars/285/cost@adorable.png
+
+        // instead of using the email cost@adorable.png
+        var apiUrl = "https://api.adorable.io/avatars/285/" + studentName + "@adorable.png";
+
+        var img = $("<img>");
+
+        img.attr("src", apiUrl);
+        img.addClass("avatar");
+        td.append(img);
+        // set the contents of the td
+        td.append(studentName);
+
+        // append the td to the tr
         tr.append(td);
-        //append the tr to the screen
+        // append the tr to the screen
         $("table").append(tr);
-        //clear the input
+        // clear the input?
         $("input").val("");
-        updateStudentEnrollment();
-    })
+        // update student enrollment count
+        updateStudentEnrollmentCount();
+
+    });
+
+
+
+
 
 
 
