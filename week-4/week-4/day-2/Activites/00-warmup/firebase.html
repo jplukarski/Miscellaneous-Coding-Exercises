@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Firebase</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <!--
+        1. Create two inpute for the bio (name, age)
+        1a. Create a save button
+        2. Using jquery get the values of these inputs when the user clicks save, store it in the database
+    -->
+    Name: <input type="text" placeholder="name" id="nameInput"> Age: <input type="text" placeholder="age" id="ageInput">
+    <button id="saveButton">Save</button>
+    <!--
+        Displace the name and age from the Bio on the screen
+    -->
+    <div>Name: </div>
+    <div id="bioName"></div>
+    <br>
+    <div>Age: </div>
+    <div id=bioAge></div>
+
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBJzNcjEN2ZYg6lqXKZeKFZPj6hnXz_W40",
+            authDomain: "first-project-9267c.firebaseapp.com",
+            databaseURL: "https://first-project-9267c.firebaseio.com",
+            projectId: "first-project-9267c",
+            storageBucket: "first-project-9267c.appspot.com",
+            messagingSenderId: "949414363193"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script src="./firebase.js"></script>
+</body>
+
+</html>

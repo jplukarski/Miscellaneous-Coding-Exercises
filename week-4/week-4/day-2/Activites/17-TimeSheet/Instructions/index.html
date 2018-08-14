@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Timesheet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Employee Data Management</h1>
+            <p class="lead">A Comprehensive Directory of Employee Billable Hours</p>
+        </div>
+        <h3>Add Employee</h3>
+        <form>
+            <div class="form-group">
+                <label for="employeeName">Employee Name</label>
+                <input placeholder="Name" type="text" class="form-control" id="nameInput" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="roleInput">Role</label>
+                <input type="text" class="form-control" id="roleInput" placeholder="Role">
+            </div>
+            <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" class="form-control" id="dateInput">
+            </div>
+            <div class="form-group">
+                <label for="rateDate">Monthly Rate</label>
+                <input type="number" class="form-control" id="rateInput" placeholder="20000">
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+        </form>
+
+        <div class="card">
+            <h3>Current Employee</h3>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Start Date</th>
+                        <th scope="col">Months Worked</th>
+                        <th scope="col">Monthly Rate ($)</th>
+                        <th scope="col">Total Billed ($)</th>
+                    </tr>
+                </thead>
+
+            </table>
+
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBlk_cS8b6luMd2qzw-J0_azvHe6ERqXxQ",
+            authDomain: "timesheet-a1538.firebaseapp.com",
+            databaseURL: "https://timesheet-a1538.firebaseio.com",
+            projectId: "timesheet-a1538",
+            storageBucket: "",
+            messagingSenderId: "821119628227"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
