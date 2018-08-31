@@ -10,11 +10,12 @@ var connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: "",
-  database: "ice_creamDB"
+  password: "root",
+  database: "ice_creamDB",
+  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock"
 });
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
   connection.end();
