@@ -21,7 +21,7 @@ Feel encouraged to use the following application as a reference: <http://hot-res
 
 Note: We know this is a hard activity. We know you aren't yet comfortable with Node or Express. But push yourself. The best way to learn is to push through the discomfort and BUILD! Ask for help when you need it. We're here to help you through the process.
 
----------------------
+----------------------
 
 
 ## Phase I - For this first phase, aim to write out the pieces that will need to be programmed to create the functionality of your application. Try to break it into 6-7 pieces
