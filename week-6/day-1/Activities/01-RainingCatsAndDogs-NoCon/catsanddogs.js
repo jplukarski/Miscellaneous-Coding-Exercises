@@ -20,3 +20,9 @@ var cats = {
 
 dogs.makeNoise();
 cats.makeNoise()
+
+function() myFunction(){
+    console.log("Yes!")
+}
+
+//yes
