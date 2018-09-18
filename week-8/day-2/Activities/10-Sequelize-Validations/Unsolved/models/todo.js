@@ -5,9 +5,15 @@
 
 // Add a flag for complete so that it's false by default if not given a value
 
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Todo = sequelize.define("Todo", {
-    text: DataTypes.STRING,
+    text: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1, 140]
+      }
+    },
     complete: DataTypes.BOOLEAN
   });
   return Todo;
